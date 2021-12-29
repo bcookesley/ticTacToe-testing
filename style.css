@@ -6,9 +6,9 @@
 }
 
 body {
-    display: grid;
+    display: block;
     place-items: center;
-    height: 100vh;
+    height: 50vh;
     background: #124567;
 }
 
@@ -30,11 +30,11 @@ body {
     height: 220px;
     width: 400px;
     padding-top: 100px;
-    padding-left: -150px;
+    float: left;
 }
 
 #startingPage h2,
-#winner h2 {
+#gameWinner h2 {
     font-size: 50px;
     color: #cdcfdb;
     text-align: center;
@@ -83,7 +83,7 @@ body {
 }
 
 #startingPage #button button:hover,
-#winner #button button:hover {
+#gamweWinner #button button:hover {
     transform: scale(0.90);
 }
 
@@ -115,7 +115,25 @@ body {
 .border-r {
     border-right: 10px solid black;
 }
+
+/*
+
+#gameWinner {
+    display: none;
+}
   
 .winner {
       color: blue;
 }
+
+#gameWinner #button {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#gameWinner #button button {
+    margin-top: 20px;
+}
+*/

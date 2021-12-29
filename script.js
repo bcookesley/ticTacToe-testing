@@ -3,6 +3,7 @@ ticTacToeGame.start();
 
 let mainPage = document.querySelector('#mainPage');
 let startingPage = document.querySelector('#startingPage');
+//let gameWinner = document.querySelector("#gameWinner");
 
 button.onclick = function () {
     if (startingPage.style.display !== "none") {
@@ -71,6 +72,7 @@ function Board() {
           winner = true;
           winningCombo.forEach((index) => {
             positions[index].className += ' winner';
+            //gameWinner.style.display = 'block';
           })
       }
     });
