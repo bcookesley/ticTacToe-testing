@@ -1,0 +1,121 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: #124567;
+}
+
+
+.container {
+    width: 320px;
+    height: 320px;
+    margin: auto;
+    margin-top: 100px;
+}
+  
+.container h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+#startingPage {
+    height: 220px;
+    width: 400px;
+    padding-top: 100px;
+    padding-left: -150px;
+}
+
+#startingPage h2,
+#winner h2 {
+    font-size: 50px;
+    color: #cdcfdb;
+    text-align: center;
+}
+
+#startingPage #line {
+    height: 1px;
+    width: 100%;
+    background: #c3cfdb;
+    margin: 20px 0;
+}
+
+#startingPage h4 {
+    font-size: 25px;
+    color: #b9b9c5;
+}
+
+#startingPage #button {
+    height: auto;
+    width: 100%;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+}
+
+#button button {
+    height: 55px;
+    width: 180px;
+    cursor: pointer;
+    background: #29cde0;
+    border: none;
+    outline: none;
+    color: #2b2d47;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 10px;
+    transform: scale(1);
+    box-shadow: 2px 2px 2px rgb(255 255 255 / 26%), -2px -2px 5px rgb(0 0 0 / 87%);
+    transition: 0.5s;
+}
+
+#button button:first-child {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#startingPage #button button:hover,
+#winner #button button:hover {
+    transform: scale(0.90);
+}
+
+#mainPage {
+    display: none;
+}
+  
+.row {
+    height: 100px;
+  }
+  
+.col {
+    height: 100px;
+    width: 100px;
+    float: left;
+    font-size: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+  
+.col:hover {
+      background-color: lightgray;
+}
+  
+.border-b {
+    border-bottom: 10px solid black;
+}
+  
+.border-r {
+    border-right: 10px solid black;
+}
+  
+.winner {
+      color: blue;
+}
