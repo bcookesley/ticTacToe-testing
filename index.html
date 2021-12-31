@@ -3,53 +3,61 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/6ffb7b923e.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <div class="container">
-
-        <div id="startingPage">
+    <div id="container">
+        <!-- Starting page -->
+        <div id="start-page">
             <h2>Tic Tac Toe</h2>
-            <div id="line"></div>
             <div id="button">
                 <button id="enter" class="enterGame">Play Game</button>
             </div>
         </div>
-        <div id="mainPage">
-            <h1>Tic Tac Toe</h1>
-            <div class="row border-b">
-                <div class="col border-r"></div>
-                <div class="col border-r"></div>
-                <div class="col"></div>
+
+        <!-- Game information -->
+        <div id="info">
+            <h2>Let's Play!</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime temporibus illum accusantium alias
+                suscipit obcaecati ipsum, ducimus quam vero explicabo dolores eius totam, omnis doloribus natus itaque
+                neque pariatur fuga.
+            </p>
+        </div>
+        <!-- Game Page -->
+        <div id="game-page">
+            <div id="turn-change">
+                <span id>X Turn</span>
+                <span id="O_Turn">O Turn</span>
+                <div id="showChange"></div>
             </div>
-            <div class="row border-b">
-                <div class="col border-r"></div>
-                <div class="col border-r"></div>
-                <div class="col"></div>
-            </div>
-            <div class="row">
-                <div class="col border-r"></div>
-                <div class="col border-r"></div>
-                <div class="col"></div>
+            <div id="game-board">
+                <div class="boxes"></div>
+                <div class="boxes"></div>
+                <div class="boxes"></div>
+                <div class="boxes"></div>
+                <div class="boxes"></div>
+                <div class="boxes"></div>
+                <div class="boxes"></div>
+                <div class="boxes"></div>
+                <div class="boxes"></div>
             </div>
         </div>
-
-        <!--
-        <div id="gameWinner">
-            <h2 id="winnerName">Player X Wins The Game!</h2>
-            <div id="button">
+        <!-- Winner Page -->
+        <div id="winner-page">
+            <h2 id="winner-name">Player X Wins The Game!</h2>
+            <div id="reset-button">
                 <button id="quit">Play Again?</button>
             </div>
         </div>
+    </div>
 
-    -->
-    </div>
-    </div>
-    <script src="script.js"></script>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>

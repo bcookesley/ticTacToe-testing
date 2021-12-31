@@ -1,58 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 * {
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
+    font-family: Quicksand, sans-serif;
 }
 
 body {
-    display: block;
+    display: grid;
+    background: rgb(39, 38, 38);
+    color:rgb(221, 221, 221);
     place-items: center;
-    height: 50vh;
-    background: #124567;
+    height: 100vh;
 }
 
-
-.container {
-    width: 320px;
-    height: 320px;
-    margin: auto;
-    margin-top: 100px;
+#container {
+    width: auto;
+    height: auto;
+    border: 4px solid #750808;
+    border-style: inset 2px 1px 2px rgb(5 5 5 / 87%);
+    border-radius: 20px;
+    padding: 30px;
 }
-  
-.container h1 {
+
+#container h2 {
     text-align: center;
-    font-size: 50px;
-    margin-bottom: 50px;
+    font-size: 40px;
+    margin-bottom: 30px;
 }
 
-#startingPage {
-    height: 220px;
-    width: 400px;
-    padding-top: 100px;
-    float: left;
+#start-page {
+    width: 240px;
+    height: 480px;
+    display: block;
+    margin-left: 60px;
 }
 
-#startingPage h2,
-#gameWinner h2 {
-    font-size: 50px;
-    color: #cdcfdb;
-    text-align: center;
-}
-
-#startingPage #line {
-    height: 1px;
-    width: 100%;
-    background: #c3cfdb;
-    margin: 20px 0;
-}
-
-#startingPage h4 {
-    font-size: 25px;
-    color: #b9b9c5;
-}
-
-#startingPage #button {
+#start-page #button {
     height: auto;
     width: 100%;
     margin: 30px 0;
@@ -65,75 +49,130 @@ body {
     height: 55px;
     width: 180px;
     cursor: pointer;
-    background: #29cde0;
+    background: #750808;
     border: none;
     outline: none;
-    color: #2b2d47;
+    color: #ffffff;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 22px;
     border-radius: 10px;
     transform: scale(1);
-    box-shadow: 2px 2px 2px rgb(255 255 255 / 26%), -2px -2px 5px rgb(0 0 0 / 87%);
+    box-shadow: 2px 2px 2px rgb(5 5 5 / 26%), -2px -2px 5px rgb(5 5 5 / 87%);
     transition: 0.5s;
 }
 
-#button button:first-child {
-    margin-right: 10px;
-    margin-top: 10px;
-}
-
-#startingPage #button button:hover,
-#gamweWinner #button button:hover {
+#start-page #button button:hover,
+#winner-page #reset-button button:hover {
+    transition: 0.5s;
     transform: scale(0.90);
 }
 
-#mainPage {
-    display: none;
+
+#info {
+    width: 320px;
+    display: block;
+    margin-top: -280px;
+    background: rgb(32, 32, 32);
+    padding: 20px;
+    border-radius: 20px;
 }
-  
-.row {
+
+#info h2 {
+    font-size: 30px;
+}
+
+#info p {
+    text-align: center;
+}
+
+#game-page {
+    display: none;
+    height: 550px;
+    width: 350px;
+    padding: 20px;
+    position: relative;
+}
+
+#game-board {
     height: 100px;
-  }
-  
-.col {
+    width: 330px;
+    position: absolute;
+    top: 150px;
+    right: 28px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 10px;
+}
+
+.boxes {
     height: 100px;
     width: 100px;
-    float: left;
-    font-size: 100px;
+    border: 3px solid rgb(0, 0, 0);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 60px;
+}
+
+#game-page #turn-change {
+    height: 60px;
+    width: 310px;
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+}
+
+#game-page #turn-change span {
+    position: absolute;
+    height: 60px;
+    width: 160px;
+    border-radius: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 30px;
     text-align: center;
-    line-height: 100px;
-}
-  
-.col:hover {
-      background-color: lightgray;
-}
-  
-.border-b {
-    border-bottom: 10px solid black;
-}
-  
-.border-r {
-    border-right: 10px solid black;
+    padding-top: 10px;
+    color: #ffff;
+    z-index: 2;
 }
 
-/*
+#game-page #turn-change #O_Turn {
+    left: 160px;
+    z-index: 3;
+}
 
-#gameWinner {
+#showChange {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 160px;
+    border-radius: 50px;
+    background: #750808;
+    z-index: 1;
+    transition: 0.2s;
+}
+
+
+#winner-page {
     display: none;
 }
-  
-.winner {
-      color: blue;
-}
 
-#gameWinner #button {
+#reset-button button {
     height: auto;
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+    background: #750808;
+    color: #ffff;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-#gameWinner #button button {
-    margin-top: 20px;
-}
-*/
+
+
