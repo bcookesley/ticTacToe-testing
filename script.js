@@ -20,6 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
   let reset = document.getElementById("quit");
   let isPlayerMove = true;
 
+  // Board and winning combinations 
+
+  let winningCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+]
+
+  // Home page disappears when clicked and enters onto game board 
 
   button.onclick = function () {
       if (startingPage.style.display !== "none") {
@@ -36,7 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
       //playerMove();
   }
 
+
+
   // this event listener needs some work - not acting as it should and console suggests it's not a function
+  // It is probably getting mixed with the logic above for entering the game
 
   document.addEventListener('click', event => {
       if (isPlayerMove === true) {
@@ -48,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // Player move not working - it should once event listener click is operating 
+  // Player move not working - not adding an X when clicked on the spot
 
 
   function playerMove(event) {
@@ -58,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
       boxes.id = 'X';
       showChange.style.right = `160px`;
 
-      // change The "changeTurn" Value False Into True
       isPlayerMove = false;
       console.log('player move function');
       computerMove();
@@ -66,6 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
       
   }
 
+
+  // second playerMove function created to see if code would work - it doesn't 
 
   /*
 
@@ -82,6 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   }
   */
+
+  // Computer Move also not working, but can call it based on the console logs 
 
   function computerMove(event) {
 
@@ -100,7 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
- // document.addEventListener('click', playerMove);
+// code below was useed for earlier version of the game and would work for putting an X in the box 
+// But only in a 2 player version. 
 
 
 /*
@@ -135,6 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
   })
   */
 
+  // Some earlier computer move function taken from another source
+
 /*
   function ComputerPlayer(board) {
       this.takeTurn = function () {
@@ -145,16 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   */
 
-  let winningCombinations = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6]
-  ]
 
  // console.log(board);
 
