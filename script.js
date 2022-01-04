@@ -1,4 +1,3 @@
-
 // Waits for DOM content to load first
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -11,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let gamePage = document.getElementById("game-page");
   let boxes = document.querySelectorAll(".boxes");
-  let showChange = document.querySelector("#showChange"); 
-  let board = Array.from(boxes); 
+  let showChange = document.querySelector("#showChange");
+  let board = Array.from(boxes);
 
   // Winner Page 
   let winnerPage = document.getElementById("winner-page");
@@ -31,31 +30,31 @@ document.addEventListener('DOMContentLoaded', () => {
     [2, 5, 8],
     [0, 4, 8],
     [2, 4, 6]
-]
+  ]
 
   // Home page disappears when clicked and enters onto game board 
 
   button.onclick = function () {
-      if (startingPage.style.display !== "none") {
-        startingPage.style.display = "none";
-        info.style.display = "none";
-      } else {
-        startingPage.style.display = "block";
-      }
-      gamePage.style.display = "block";
+    if (startingPage.style.display !== "none") {
+      startingPage.style.display = "none";
       info.style.display = "none";
+    } else {
+      startingPage.style.display = "block";
+    }
+    gamePage.style.display = "block";
+    info.style.display = "none";
 
-      //isPlayerMove = true;
-      console.log('Start game');
-      //playerMove();
+    //isPlayerMove = true;
+    console.log('Start game');
+    //playerMove();
   }
 
   boxes.forEach(box => box.addEventListener('click', event => {
 
-        if(isPlayerMove === true) {
-            playerMove(event, box); // some kind of issue with this line 
-            console.log('player event listener');
-        }
+    if (isPlayerMove === true) {
+      playerMove(event, box); // some kind of issue with this line 
+      console.log('player event listener');
+    }
   }))
 
 
@@ -66,16 +65,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function playerMove(event, box) {
 
-      if (box.innerText == '') {
+    if (box.innerText == '') {
       box.innerText += 'X';
       box.id = 'X';
-      showChange.style.right = `160px`;
+      showChange.style.left = `160px`;
 
       console.log('player move function');
       isPlayerMove = false;
       computerMove(); // problem at this line
-      }
-      
+    }
+
   }
 
 
@@ -101,19 +100,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function computerMove(event, box) {
 
-      if (box.innerText == "") { // problem at this line 
-         Math.floor(Math.random) * (boxes.length);
-         box.innerText = 'O';
-         box.id = 'O';
-         isPlayerMove = true;
-         playerMove();
-      }
+    let i = 0;
 
-      //isPlayerMove = false;
-      console.log('computer move');
-      //playerMove();
-
+    while (board[i] < 8) {
+      Math.floor(Math.random) * (board.length);
+      box.innerText = 'O';
+    }
   }
+
+  /*
+    if (isPlayerMove == false) { // problem at this line 
+       Math.floor(Math.random) * (box.length);
+       box.innerText = 'O';
+       box.id = 'O';
+       isPlayerMove = true;
+       playerMove();
+    }
+    */
+
+  //isPlayerMove = false;
+  //console.log('computer move');
+  //playerMove();
+
 
 
 
@@ -122,23 +130,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /*
-  boxes.forEach(items => {
-      items.addEventListener("click", () => {
-          // Add "X" Icon If "ChangeTurn" = False
-          // Add "O" Icon If "ChangeTurn" = True
-          if (changeTurn == false) {
-              items.innerText = 'X';
-              items.id = "X";
-              items.style.pointerEvents = "none";
-              showChange.style.left = `160px`;
-  
-              // change The "changeTurn" Value False Into True
-              changeTurn = true;
-          } else {
-              computerMove();
-  
-            /* A computer turn needs to exist here in some capacity. This just generate a second move made by a person */ 
-            /*
+boxes.forEach(items => {
+    items.addEventListener("click", () => {
+        // Add "X" Icon If "ChangeTurn" = False
+        // Add "O" Icon If "ChangeTurn" = True
+        if (changeTurn == false) {
+            items.innerText = 'X';
+            items.id = "X";
+            items.style.pointerEvents = "none";
+            showChange.style.left = `160px`;
+
+            // change The "changeTurn" Value False Into True
+            changeTurn = true;
+        } else {
+            computerMove();
+
+          /* A computer turn needs to exist here in some capacity. This just generate a second move made by a person */
+/*
               items.innerHTML = `<i class="fas fa-circle-notch"></i>`;
               items.id = "O";
               items.style.pointerEvents = "none";
@@ -153,20 +161,20 @@ document.addEventListener('DOMContentLoaded', () => {
   })
   */
 
-  // Some earlier computer move function taken from another source
+// Some earlier computer move function taken from another source
 
 /*
-  function ComputerPlayer(board) {
-      this.takeTurn = function () {
-          let availablePositions = board.positions.filter((p) => p.innerText === '');
-          const move = Math.floor(Math.random() * (availablePositions.length - 0));
-          availablePositions[move].innerText = 'O';
-      }
-  }
-  */
+ function ComputerPlayer(board) {
+     this.takeTurn = function () {
+         let availablePositions = board.positions.filter((p) => p.innerText === '');
+         const move = Math.floor(Math.random() * (availablePositions.length - 0));
+         availablePositions[move].innerText = 'O';
+     }
+ }
+ */
 
 
- // console.log(board);
+// console.log(board);
 
 
 })
