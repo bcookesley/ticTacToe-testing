@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   boxes.forEach(box => box.addEventListener('click', event => {
 
         if(isPlayerMove === true) {
-            playerMove(event, box);
+            playerMove(event, box); // some kind of issue with this line 
             console.log('player event listener');
         }
   }))
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       console.log('player move function');
       isPlayerMove = false;
-      computerMove();
+      computerMove(); // problem at this line
       }
       
   }
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function computerMove(event, box) {
 
-      if (box.innerText == "") {
+      if (box.innerText == "") { // problem at this line 
          Math.floor(Math.random) * (boxes.length);
          box.innerText = 'O';
          box.id = 'O';
