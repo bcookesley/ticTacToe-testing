@@ -50,17 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
       //playerMove();
   }
 
+  boxes.forEach(box => box.addEventListener('click', event => {
 
-
-  // this event listener needs some work - not acting as it should and console suggests it's not a function
-  // It is probably getting mixed with the logic above for entering the game
-
-  document.addEventListener('click', event => {
-      if (isPlayerMove === true) {
-          playerMove(event);
-          console.log('player event listener');
-      } 
-  });
+        if(isPlayerMove === true) {
+            playerMove(event, box);
+            console.log('player event listener');
+        }
+  }))
 
 
 
@@ -68,15 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Player move not working - not adding an X when clicked on the spot
 
 
-  function playerMove(event) {
+  function playerMove(event, box) {
 
-      if (boxes.innerText == '') {
-      boxes.innerHTML += 'X';
-      boxes.id = 'X';
+      if (box.innerText == '') {
+      box.innerText += 'X';
+      box.id = 'X';
       showChange.style.right = `160px`;
 
-      isPlayerMove = false;
       console.log('player move function');
+      isPlayerMove = false;
       computerMove();
       }
       
@@ -103,16 +99,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Computer Move also not working, but can call it based on the console logs 
 
-  function computerMove(event) {
+  function computerMove(event, box) {
 
-      if (boxes.innerText == "") {
+      if (box.innerText == "") {
          Math.floor(Math.random) * (boxes.length);
-         boxes[move].innerText = 'O';
-         playerMove();
+         box.innerText = 'O';
+         box.id = 'O';
          isPlayerMove = true;
+         playerMove();
       }
 
-      isPlayerMove = false;
+      //isPlayerMove = false;
       console.log('computer move');
       //playerMove();
 
